@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Fetching Source') {
             steps {
-                git 'https://github.com/seu-username/calculator-app-finished.git'
+                git 'https://github.com/malvesdiniz/calculator-app-finished.git'
             }
         }
     }
