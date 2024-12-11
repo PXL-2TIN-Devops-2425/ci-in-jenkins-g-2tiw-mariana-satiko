@@ -21,11 +21,10 @@ pipeline {
                 }
             }
         }
-        stage('Run Tests') {
+        stage('Unittest') {
             steps {
-                script {
-                    sh 'npm test'
-                }
+                sh 'npm test' 
+                junit 'test-report.xml' 
             }
         }
     }
