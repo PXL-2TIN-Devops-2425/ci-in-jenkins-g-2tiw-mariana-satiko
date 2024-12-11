@@ -6,5 +6,10 @@ pipeline {
                 echo "good luck..."
             }
         }
+        stage('Fetching Source') {
+            steps {
+                git 'https://github.com/seu-username/calculator-app-finished.git'
+            }
+        }
     }
 }
