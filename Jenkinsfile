@@ -6,10 +6,14 @@ pipeline {
                 echo "good luck..."
             }
         }
+    stages {
         stage('Fetching Source') {
             steps {
-                git 'https://github.com/malvesdiniz/calculator-app-finished.git'
+                git 'git@github.com:malvesdiniz/calculator-app-finished.git'
             }
+        }
+    }
+}
         }
     }
 }
