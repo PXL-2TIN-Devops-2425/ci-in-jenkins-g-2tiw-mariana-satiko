@@ -6,7 +6,6 @@ pipeline {
                 echo "good luck..."
             }
         }
-    stages {
         stage('Fetching Source') {
             steps {
                 git 'git@github.com:malvesdiniz/calculator-app-finished.git'
@@ -14,5 +13,5 @@ pipeline {
         }
     }
 }
-        }
+        
 
