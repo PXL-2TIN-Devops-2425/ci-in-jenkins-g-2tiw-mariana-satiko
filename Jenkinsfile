@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools {
         nodejs 'TINnode-devops'
+    }
     stages {
         stage('opdracht 5') {
             steps {
