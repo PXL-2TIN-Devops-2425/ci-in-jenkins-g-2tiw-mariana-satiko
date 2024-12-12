@@ -17,7 +17,9 @@ The important step to take into account is that in the private key field we have
 These keys were created in the terminal as shown in the screenshot below.
 ![Screenshot van Public and Private key](img/Public-and-private-key.png)
 
-b)
+From now on, whenever the pipeline is built it will use the script in the Jenkinsfile file present in this repository.
+
+b) 
 
 
 c)
