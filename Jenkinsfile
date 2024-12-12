@@ -41,6 +41,17 @@ pipeline {
             }
         }
     }
+     post {
+        failure {
+            script {
+                def errorMessage = "Pipeline failed try on ${new Date()}"
+                writeFile file: "/var/lib/jenkins/jenkinserrorlog", text: errorMessage
+            }
+        }
+        success {
+            archiveArtifacts artifacts: 'bundle.zip', allowEmptyArchive: false
+        }
+    }
 }
         
 
