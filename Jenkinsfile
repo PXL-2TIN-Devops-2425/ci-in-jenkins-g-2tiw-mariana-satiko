@@ -9,22 +9,23 @@ pipeline {
                 echo "good luck..."
             }
         }
-        stage('Code Pull') {
+        stage('fetching source') {
             steps {
                 //Get code from GitHub
                git branch: 'main', 
                 url: 'git@github.com:malvesdiniz/calculator-app-finished.git'
             }
         }
-         stage('Build') {
+         stage('install dependencies') {
             steps {
                 echo "Performing npm build"
                 sh 'npm install'
             }
         }
-        stage('Test') {
+        stage('unittest') {
             steps {
                 sh 'npm test'
+                junit 'test-results.xml 
             }
         }   
     }
