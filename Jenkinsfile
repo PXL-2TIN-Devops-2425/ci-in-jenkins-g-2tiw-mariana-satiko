@@ -22,12 +22,11 @@ pipeline {
                 sh 'npm install'
             }
         }
-        //stage('Unittest') {
-            //steps {
-            //    sh 'npm test' 
-             //   junit '**/target/surefire-reports/TEST-*.xml' 
-           // }
-       // }
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }   
     }
 }
         
