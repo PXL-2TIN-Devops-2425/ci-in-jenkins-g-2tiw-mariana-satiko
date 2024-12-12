@@ -2,7 +2,10 @@ Vul onderstaande aan met de antwoorden op de vragen uit de readme.md file. Wil j
 opmaak met Markdown.
 
 
-a)
+a)The first step to be able to use the Jenkinsfile from this repository was to create a pipeline where the script was associated with this file. 
+img/Pipeline-script-with-SCM.png
+
+For this, it is necessary that my Jenkins has authorized access to my repositories on GitHub. This is why a new authentication was created.
 
 
 b)
