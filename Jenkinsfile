@@ -9,22 +9,25 @@ pipeline {
                 echo "good luck..."
             }
         }
-        stage('Fetching Source') {
+        stage('Code Pull') {
             steps {
-               git branch: 'main', url: 'git@github.com:malvesdiniz/calculator-app-finished.git'
+                //Get code from GitHub
+               git branch: 'main', 
+                url: 'git@github.com:malvesdiniz/calculator-app-finished.git'
             }
         }
-         stage('Install Dependencies') {
+         stage('Build') {
             steps {
-                script {
-                    sh 'npm install'
-                }
+                nodejs('npm') {
+                  echo "Performing npm build"
+                  sh 'npm install'
+                }     
             }
         }
         stage('Unittest') {
             steps {
                 sh 'npm test' 
-                junit 'test-report.xml' 
+                junit '**/target/surefire-reports/TEST-*.xml' 
             }
         }
     }
