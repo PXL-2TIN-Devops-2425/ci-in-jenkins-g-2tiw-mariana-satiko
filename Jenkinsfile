@@ -34,8 +34,14 @@ pipeline {
                 echo "Creating the bundle directory..."
                 sh '''
                 mkdir -p bundle
-                rsync -av --exclude='bundle' ./ bundle/
-                rm -rf bundle/.git bundle/.gitignore bundle/readme.md bundle/Jenkinsfile bundle/tests
+                rsync -av 
+                --exclude='bundle' 
+                --exclude='.git' 
+                --exclude='.gitignore' 
+                --exclude='readme.md' 
+                --exclude='Jenkinsfile' 
+                --exclude='tests'
+                ./ bundle/
                 '''
                 echo "Zipping the bundle directory..."
                 sh 'zip -r bundle.zip bundle'
