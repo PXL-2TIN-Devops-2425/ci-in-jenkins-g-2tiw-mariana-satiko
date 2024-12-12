@@ -18,10 +18,8 @@ pipeline {
         }
          stage('Build') {
             steps {
-                nodejs('npm') {
-                  echo "Performing npm build"
-                  sh 'npm install'
-                }     
+                echo "Performing npm build"
+                sh 'npm install'
             }
         }
         //stage('Unittest') {
