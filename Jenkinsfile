@@ -18,16 +18,29 @@ pipeline {
         }
          stage('install dependencies') {
             steps {
-                echo "Performing npm build"
+                echo "Performing npm build..."
                 sh 'npm install'
             }
         }
         stage('unittest') {
             steps {
+                echo "running unitests..."
                 sh 'npm test'
                 junit 'junit.xml'
             }
         }   
+        stage('create bundle') {
+            steps {
+                echo "Creating the bundle directory..."
+                sh '''
+                mkdir -p bundle
+                cp -r * bundle
+                rm -rf bundle/.git bundle/.gitignore bundle/readme.md bundle/Jenkinsfile bundle/tests
+                '''
+                echo "Zipping the bundle directory..."
+                sh 'zip -r bundle.zip bundle'
+            }
+        }
     }
 }
         
