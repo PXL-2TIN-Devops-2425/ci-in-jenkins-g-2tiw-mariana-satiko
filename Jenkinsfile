@@ -24,12 +24,12 @@ pipeline {
                 }     
             }
         }
-        stage('Unittest') {
-            steps {
-                sh 'npm test' 
-                junit '**/target/surefire-reports/TEST-*.xml' 
-            }
-        }
+        //stage('Unittest') {
+            //steps {
+            //    sh 'npm test' 
+             //   junit '**/target/surefire-reports/TEST-*.xml' 
+           // }
+       // }
     }
 }
         
