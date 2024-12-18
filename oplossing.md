@@ -53,6 +53,14 @@ To ensure the pipeline can be executed multiple times without errors, the follow
 Before creating a new bundle, clean up any existing artifacts to avoid conflicts.
 ![Screenshot van cleanup stage](img/cleanup_stage.png)
 
-
-
 d)
+
+To schedule the pipeline to run automatically, I used Jenkins' cron syntax to configure a trigger in the pipeline job.
+To schedule the pipeline to run every Friday at 2 PM, I used the following cron expression:
+0 14 * * 5
+0: This specifies the minute (0th minute).
+14: This specifies the hour (2 PM in 24-hour format).
+*: This specifies any day of the month.
+*: This specifies any month.
+5: This specifies Friday (in cron, days of the week are numbered starting from Sunday, so 5 corresponds to Friday).
+![Screenshot van schedulled build](img/build_periodically.png)
