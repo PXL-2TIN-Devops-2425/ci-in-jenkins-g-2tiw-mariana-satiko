@@ -32,6 +32,11 @@ Next we need to provide stage to fetch the source code from our personal GitHub 
 Then we create a stage “install dependencies” that will ensure that all npmdependencies of the application will be installed.
 ![Screenshot van Jenkins file stage to install dependencies](img/install_dependencies_stage.png)
 
+Then we add a stage “unit test” that will perform the unit tests of the application.This will allow to run unit tests using npm test.
+junit 'junit.xml' is used for archiving JUnit test results and ensures the test framework generates the report as junit.xml
+![Screenshot van unit test stage](img/unit_test_stage.png)
+
+
 c)
 
 
