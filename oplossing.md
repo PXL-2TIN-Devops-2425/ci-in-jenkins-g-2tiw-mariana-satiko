@@ -20,7 +20,11 @@ These keys were created in the terminal as shown in the screenshot below.
 From now on, whenever the pipeline is built it will use the script in the Jenkinsfile file present in this repository.
 
 b) 
+First we install the pludin NodeJS as shown in the screenshot below.
+![Screenshot van NodeJSPlugin](img/NodeJsPlugin.png)
 
+We then install NodeJS 23.3.0 and configure it in Jenkins Global Tool Configuration called "TINnode-devops".
+![Screenshot van NodeJS Configuratie in TINnode-devops](img/New-NodeJs.png)
 
 c)
 
