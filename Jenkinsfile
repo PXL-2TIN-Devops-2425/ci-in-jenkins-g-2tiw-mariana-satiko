@@ -13,7 +13,7 @@ pipeline {
             steps {
                 //Get code from GitHub
                git branch: 'main', 
-                url: 'git@github.com:malvesdiniz/calculator-app-finished.git'
+                url: 'https://github.com/satikoshapy/calculator-app-finished.git'
             }
         }
          stage('install dependencies') {
