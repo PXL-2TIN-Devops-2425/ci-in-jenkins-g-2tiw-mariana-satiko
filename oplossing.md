@@ -26,6 +26,11 @@ First we install the pludin NodeJS as shown in the screenshot below.
 We then install NodeJS 23.3.0 and configure it in Jenkins Global Tool Configuration called "TINnode-devops".
 ![Screenshot van NodeJS Configuratie in TINnode-devops](img/New-NodeJs.png)
 
+Next we need to provide stage to fetch the source code from our personal GitHub repository on the main branch.
+![Screenshot van Jenkins file stage](img/stage_getting_source_from_github.png)
+
+
+
 c)
 
 
