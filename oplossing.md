@@ -26,6 +26,8 @@ First we install the pludin NodeJS as shown in the screenshot below.
 We then install NodeJS 23.3.0 and configure it in Jenkins Global Tool Configuration called "TINnode-devops".
 ![Screenshot van NodeJS Configuratie in TINnode-devops](img/New-NodeJs.png)
 
+c)
+
 Next we need to provide stage to fetch the source code from our personal GitHub repository on the main branch.
 ![Screenshot van Jenkins file stage](img/stage_getting_source_from_github.png)
 
@@ -36,8 +38,21 @@ Then we add a stage “unit test” that will perform the unit tests of the appl
 junit 'junit.xml' is used for archiving JUnit test results and ensures the test framework generates the report as junit.xml
 ![Screenshot van unit test stage](img/unit_test_stage.png)
 
+Next, add a stage 'create a bundle' that excludes unnecessary files and creates a bundle.zip with only the required files.
+![Screenshot van create bundle stage](img/create_bundle_stage.png)
 
-c)
+The next stage ensure failure handling. It writes a failure log with the date and time to /var/lib/jenkins/jenkinserrorlog.
+![Screenshot van post failire](img/post_failure.png)
+
+Finally, archiving artifacts.
+Archives the bundle.zip as a build artifact when the pipeline runs successfully.
+![Screenshot van archiving artifacts](img/success.png)
+
+Not, quite finally yet!
+To ensure the pipeline can be executed multiple times without errors, the following adjustments were made:
+Before creating a new bundle, clean up any existing artifacts to avoid conflicts.
+![Screenshot van cleanup stage](img/cleanup_stage.png)
+
 
 
 d)
