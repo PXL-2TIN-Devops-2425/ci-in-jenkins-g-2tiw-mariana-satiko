@@ -29,7 +29,8 @@ We then install NodeJS 23.3.0 and configure it in Jenkins Global Tool Configurat
 Next we need to provide stage to fetch the source code from our personal GitHub repository on the main branch.
 ![Screenshot van Jenkins file stage](img/stage_getting_source_from_github.png)
 
-
+Then we create a stage “install dependencies” that will ensure that all npmdependencies of the application will be installed.
+![Screenshot van Jenkins file stage to install dependencies](img/install_dependencies_stage.png)
 
 c)
 
