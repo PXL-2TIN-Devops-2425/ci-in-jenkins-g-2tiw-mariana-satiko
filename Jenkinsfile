@@ -12,7 +12,7 @@ pipeline {
         stage('cleanup') {
             steps {
                 echo "Cleaning up old artifact..."
-                sh 'rm -rf bundle bundle.zip'
+               cleanWs()
             }
         }
         stage('fetching source') {
