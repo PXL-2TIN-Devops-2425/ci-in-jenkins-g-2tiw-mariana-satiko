@@ -9,6 +9,12 @@ pipeline {
                 echo "good luck..."
             }
         }
+        stage('cleanup') {
+            steps {
+                echo "Cleaning up old artifact..."
+                sh 'rm -rf bundle bundle.zip'
+            }
+        }
         stage('fetching source') {
             steps {
                 //Get code from GitHub
